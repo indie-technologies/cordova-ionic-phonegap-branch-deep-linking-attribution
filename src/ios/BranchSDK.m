@@ -342,6 +342,15 @@ NSString * const pluginVersion = @"%BRANCH_PLUGIN_VERSION%";
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)checkPasteboardOnInstall:(CDVInvokedUrlCommand*)command
+{
+  [[Branch getInstance] delayInitToCheckForSearchAds];
+
+  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK  messageAsString: @"Success"];
+
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 #pragma mark - Branch Universal Object Methods
 
 - (void)createBranchUniversalObject:(CDVInvokedUrlCommand*)command

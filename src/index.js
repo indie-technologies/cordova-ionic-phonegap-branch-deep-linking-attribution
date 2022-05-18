@@ -146,6 +146,10 @@ Branch.prototype.getFirstReferringParams = function getFirstReferringParams() {
   return execute("getFirstReferringParams");
 };
 
+Branch.prototype.checkPasteboardOnInstall = function checkPasteboardOnInstall() {
+  return execute("checkPasteboardOnInstall");
+};
+
 Branch.prototype.getLatestReferringParams = function getLatestReferringParams() {
   return execute("getLatestReferringParams");
 };
